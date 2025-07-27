@@ -1,0 +1,24 @@
+{
+  "name": "parabank-test-automation",
+  "version": "1.0.0",
+  "description": "End-to-end test automation framework for ParaBank using Playwright",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headless": "npx playwright test --headed=false",
+    "test:ui": "npx playwright test tests/ui/",
+    "test:api": "npx playwright test tests/api/",
+    "test:report": "npx playwright show-report",
+    "test:debug": "npx playwright test --debug",
+    "install:browsers": "npx playwright install"
+  },
+  "keywords": ["playwright", "automation", "testing", "parabank", "e2e"],
+  "author": "QA Automation Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
+}

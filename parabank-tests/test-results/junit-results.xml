@@ -1,0 +1,328 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="131.32247">
+<testsuite name="api/transactions.spec.js" timestamp="2025-07-27T17:05:40.916Z" hostname="chromium" tests="1" failures="0" skipped="0" time="57.863" errors="0">
+<testcase name="ParaBank API - Enhanced JSON Validation › Detailed JSON response validation after bill payment" classname="api/transactions.spec.js" time="57.863">
+<system-out>
+<![CDATA[Deprecation Warning: faker.random.number is now located in faker.datatype.number
+Deprecation Warning: faker.random.number is now located in faker.datatype.number
+Deprecation Warning: faker.random.number is now located in faker.datatype.number
+Deprecation Warning: faker.random.number is now located in faker.datatype.number
+
+🚀 ===== TEST SETUP =====
+🔄 Registering user: ue84b2a439e20941260
+
+=== Registration Attempt 1/10 ===
+Username: ue84b2a439e20941260
+Navigating to registration page...
+Navigating to: https://parabank.parasoft.com/parabank/register.htm
+Filling registration form with bulletproof handling...
+Filling firstName with selector: input[name="customer.firstName"]
+✓ Successfully filled firstName: Abe
+Filling lastName with selector: input[name="customer.lastName"]
+✓ Successfully filled lastName: Hagenes
+Filling address with selector: input[name="customer.address.street"]
+✓ Successfully filled address: 4875 Jabari Plains
+Filling city with selector: input[name="customer.address.city"]
+✓ Successfully filled city: Lake Joe
+Filling state with selector: input[name="customer.address.state"]
+✓ Successfully filled state: MN
+Filling zipCode with selector: input[name="customer.address.zipCode"]
+✓ Successfully filled zipCode: 27959
+Filling phoneNumber with selector: input[name="customer.phoneNumber"]
+✓ Successfully filled phoneNumber: 813-345-4774
+Filling ssn with selector: input[name="customer.ssn"]
+✓ Successfully filled ssn: 370-12-6440
+Filling username with selector: input[name="customer.username"]
+✓ Successfully filled username: ue84b2a439e20941260
+Filling password with selector: input[name="customer.password"]
+✓ Successfully filled password: TestPass123!
+Filling confirmPassword with selector: input[name="repeatedPassword"]
+✓ Successfully filled confirmPassword: TestPass123!
+✓ All registration fields filled successfully
+Submitting registration form...
+Registration submitted using: input[value="Register"]
+Found success indicator: Welcome ue84b2a439e20941260
+✅ Registration successful for: ue84b2a439e20941260
+User already logged in - detected via: h2:has-text("Account Services")
+✓ Login success verified with: h2:has-text("Account Services")
+Navigating to accounts overview...
+Accounts table found with selector: #accountTable
+Getting account numbers from overview...
+Accounts table found with selector: #accountTable
+Found 2 account rows using: #accountTable tbody tr
+Found account numbers: 27885
+
+📋 TEST PARAMETERS:
+  👤 Username: ue84b2a439e20941260
+  🏦 Account: 27885
+  💰 Payment Amount: $67.39
+Deprecation Warning: faker.random.number is now located in faker.datatype.number
+
+💳 PERFORMING BILL PAYMENT
+  📋 Payee: Davis, Stamm and Dooley Services
+  💰 Amount: $67.39
+  🏦 From Account: 27885
+🔍 Setting up network request capture...
+Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
+📡 Captured request: GET https://parabank.parasoft.com/parabank/billpay.htm
+📡 Captured API call: GET https://parabank.parasoft.com/parabank/billpay.htm
+💳 Submitting payment and monitoring network calls...
+📡 Captured request: POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+📡 Captured API call: POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+📊 Captured response: 200 https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+📄 Response data type: object
+📡 Captured API call: GET https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+📄 Response data captured: object 
+📡 Total captured requests: 2
+  📋 GET https://parabank.parasoft.com/parabank/billpay.htm
+  📋 POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+
+✅ BILL PAYMENT COMPLETED
+📡 Network calls captured: 2
+
+📊 ===== JSON RESPONSE ANALYSIS =====
+📡 Returning 3 captured endpoints
+
+📡 CAPTURED ENDPOINTS: 3
+  1. GET https://parabank.parasoft.com/parabank/billpay.htm
+  2. POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+  3. GET https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+
+🔍 SEARCHING FOR TRANSACTION DATA
+
+🔍 SEARCHING FOR TRANSACTIONS
+📋 Account: 27885
+💰 Amount: $67.39
+
+📡 FOUND 2 CAPTURED ENDPOINTS
+
+🔍 TRYING CAPTURED ENDPOINT: POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+📊 HTTP Status: 400
+
+🔍 TRYING CAPTURED ENDPOINT: GET https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+📊 HTTP Status: 405
+
+🔄 TRYING FALLBACK ENDPOINTS
+
+🔍 TRYING FALLBACK: /services/bank/accounts/27885/transactions
+📊 HTTP Status: 404
+
+🔍 TRYING FALLBACK: /services/bank/transactions/account/27885
+📊 HTTP Status: 404
+
+🔍 TRYING FALLBACK: /activity.htm?id=27885
+📊 HTTP Status: 404
+
+🔍 TRYING FALLBACK: /overview.htm
+📊 HTTP Status: 404
+
+🔍 TRYING FALLBACK: /findtrans.htm
+📊 HTTP Status: 404
+
+❌ NO SUCCESSFUL API RESPONSES FOUND
+
+📊 API RESPONSE SUMMARY:
+  🌐 HTTP Status: 404
+  📡 Endpoint Used: none
+  📄 Data Type: null
+
+⚠️ NO JSON DATA AVAILABLE FOR VALIDATION
+  📊 Status: 404
+  📄 Data: null
+  ℹ️ This may indicate ParaBank uses form submissions rather than JSON APIs
+
+🔍 ===== ADDITIONAL API TESTING =====
+
+🏦 TESTING ACCOUNT DETAILS API
+
+🔍 GETTING ACCOUNT DETAILS: 27885
+
+🔍 TRYING: /services/bank/accounts/27885
+📊 HTTP Status: 404
+
+🔍 TRYING: /activity.htm?id=27885
+📊 HTTP Status: 404
+
+🔍 TRYING: /overview.htm
+📊 HTTP Status: 404
+
+📊 ACCOUNT DETAILS RESPONSE:
+  🌐 HTTP Status: 404
+  📡 Endpoint: none
+  ℹ️ Account details API not available or returned non-JSON data
+📄 Returning 1 JSON responses
+
+📄 ALL CAPTURED JSON RESPONSES: 1
+
+  📄 Response 1:
+    🌐 Endpoint: GET https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+    📊 Data Type: object
+    📋 Object Fields: payeeName, amount, accountId
+    📄 Full Response:
+{
+  "payeeName": "Davis, Stamm and Dooley Services",
+  "amount": 67.39,
+  "accountId": 27885
+}
+
+🎯 ===== FINAL VALIDATION SUMMARY =====
+
+📊 TEST EXECUTION SUMMARY:
+  👤 User: ue84b2a439e20941260
+  🏦 Account: 27885
+  💰 Transaction Amount: 67.39
+  📡 Network Calls Captured: 2
+📡 Returning 3 captured endpoints
+📄 Returning 1 JSON responses
+  📡 API Endpoints Found: 3
+  📄 JSON Responses: 1
+
+✅ VALIDATIONS PERFORMED:
+  🔍 Network request capture during bill payment
+  📡 API endpoint discovery and testing
+  📄 JSON response structure analysis
+  🏦 Account and transaction data validation
+  💰 Amount and ID matching verification
+  📊 Data type and field presence validation
+
+📈 JSON RESPONSE ANALYSIS RESULTS:
+
+  📄 Response 1 Summary:
+    📡 Endpoint: https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39
+    📊 Type: object
+
+🎉 JSON VALIDATION TEST COMPLETED SUCCESSFULLY!
+📋 Comprehensive JSON response analysis performed
+🔍 All available API endpoints tested and validated
+
+🏁 ===== TEST EXECUTION COMPLETE =====
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="ui/banking-workflow.spec.js" timestamp="2025-07-27T17:05:40.916Z" hostname="chromium" tests="1" failures="0" skipped="0" time="72.565" errors="0">
+<testcase name="ParaBank Banking Workflow - Final Fixed › Complete banking workflow - Register, Login, Account Operations, Bill Pay" classname="ui/banking-workflow.spec.js" time="72.565">
+<system-out>
+<![CDATA[Deprecation Warning: faker.random.number is now located in faker.datatype.number
+Deprecation Warning: faker.random.number is now located in faker.datatype.number
+Deprecation Warning: faker.random.number is now located in faker.datatype.number
+Deprecation Warning: faker.random.number is now located in faker.datatype.number
+Generated test data for user: uc430830336ff999345
+
+🚀 Starting test with user: uc430830336ff999345
+
+=== STEP 1: User Registration ===
+
+=== Registration Attempt 1/10 ===
+Username: uc430830336ff999345
+Navigating to registration page...
+Navigating to: https://parabank.parasoft.com/parabank/register.htm
+Filling registration form with bulletproof handling...
+Filling firstName with selector: input[name="customer.firstName"]
+✓ Successfully filled firstName: Granville
+Filling lastName with selector: input[name="customer.lastName"]
+✓ Successfully filled lastName: White
+Filling address with selector: input[name="customer.address.street"]
+✓ Successfully filled address: 594 Mina Light
+Filling city with selector: input[name="customer.address.city"]
+✓ Successfully filled city: Funkland
+Filling state with selector: input[name="customer.address.state"]
+✓ Successfully filled state: NY
+Filling zipCode with selector: input[name="customer.address.zipCode"]
+✓ Successfully filled zipCode: 98122
+Filling phoneNumber with selector: input[name="customer.phoneNumber"]
+✓ Successfully filled phoneNumber: 805-073-7083
+Filling ssn with selector: input[name="customer.ssn"]
+✓ Successfully filled ssn: 263-75-3763
+Filling username with selector: input[name="customer.username"]
+✓ Successfully filled username: uc430830336ff999345
+Filling password with selector: input[name="customer.password"]
+✓ Successfully filled password: TestPass123!
+Filling confirmPassword with selector: input[name="repeatedPassword"]
+✓ Successfully filled confirmPassword: TestPass123!
+✓ All registration fields filled successfully
+Submitting registration form...
+Registration submitted using: input[value="Register"]
+Found success indicator: Welcome uc430830336ff999345
+✅ Registration successful for: uc430830336ff999345
+Found success indicator: Welcome uc430830336ff999345
+✅ User uc430830336ff999345 registered successfully
+
+=== STEP 2: Login Verification ===
+User already logged in - detected via: h2:has-text("Account Services")
+✅ User is already logged in after registration
+✓ Login success verified with: h2:has-text("Account Services")
+✅ User uc430830336ff999345 login state verified
+
+=== STEP 3: Navigation Verification ===
+✅ Navigation element found: a[href*="services.htm"]
+✅ Global navigation menu verified
+
+=== STEP 4: Account Creation ===
+Navigating to accounts overview...
+Accounts table found with selector: #accountTable
+Getting account numbers from overview...
+Accounts table found with selector: #accountTable
+Found 2 account rows using: #accountTable tbody tr
+Found account numbers: 28440
+📋 Existing accounts: 28440
+Navigating to: https://parabank.parasoft.com/parabank/openaccount.htm
+✅ New Savings account created: 28662
+
+=== STEP 5: Balance Verification ===
+Navigating to accounts overview...
+Accounts table found with selector: #accountTable
+Getting balance for account: 28662
+Accounts table found with selector: #accountTable
+Balance for 28662: $100.00
+Getting balance for account: 28662
+Accounts table found with selector: #accountTable
+Balance for 28662: $100.00
+Account 28662 balance value: 100
+✅ Account 28662 shows balance: $100.00
+
+=== STEP 6: Fund Transfer ===
+Getting account numbers from overview...
+Accounts table found with selector: #accountTable
+Found 3 account rows using: #accountTable tbody tr
+Found account numbers: 28440, 28662
+Navigating to: https://parabank.parasoft.com/parabank/transfer.htm
+✅ Transferred $50.00 from 28662 to 28440
+
+=== STEP 7: Bill Payment ===
+Deprecation Warning: faker.random.number is now located in faker.datatype.number
+🔍 Setting up network request capture...
+Navigating to: https://parabank.parasoft.com/parabank/billpay.htm
+📡 Captured request: GET https://parabank.parasoft.com/parabank/billpay.htm
+💳 Submitting payment and monitoring network calls...
+📡 Captured request: POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=28662&amount=60.35
+📊 Captured response: 200 https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=28662&amount=60.35
+📄 Response data type: object
+📡 Total captured requests: 2
+  📋 GET https://parabank.parasoft.com/parabank/billpay.htm
+  📋 POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=28662&amount=60.35
+✅ Bill payment of $60.35 completed to Casper, Murphy and Ebert Services
+
+=== STEP 8: Final Verification ===
+Navigating to accounts overview...
+📡 Captured request: GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/22091/accounts
+Accounts table found with selector: #accountTable
+📊 Captured response: 200 https://parabank.parasoft.com/parabank/services_proxy/bank/customers/22091/accounts
+📄 Response data type: Array
+Getting balance for account: 28662
+Accounts table found with selector: #accountTable
+Balance for 28662: -$10.35
+✅ Final verification complete. Account balance: -$10.35
+
+🎉 Complete banking workflow test passed successfully!
+User already logged in - detected via: h2:has-text("Account Services")
+✓ User logged out successfully
+✅ User logged out successfully
+]]>
+</system-out>
+<system-err>
+<![CDATA[⚠️ Could not get total balance, but continuing
+]]>
+</system-err>
+</testcase>
+</testsuite>
+</testsuites>

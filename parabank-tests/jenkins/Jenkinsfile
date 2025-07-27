@@ -1,0 +1,178 @@
+pipeline {
+    agent any
+    
+    environment {
+        NODE_VERSION = '18'
+        HEADLESS = 'true'
+    }
+    
+    parameters {
+        choice(
+            name: 'TEST_SUITE',
+            choices: ['all', 'ui', 'api'],
+            description: 'Select test suite to run'
+        )
+        choice(
+            name: 'BROWSER',
+            choices: ['chromium', 'firefox', 'webkit', 'headless-chrome'],
+            description: 'Select browser for testing'
+        )
+        booleanParam(
+            name: 'PARALLEL_EXECUTION',
+            defaultValue: true,
+            description: 'Run tests in parallel'
+        )
+    }
+    
+    stages {
+        stage('Checkout') {
+            steps {
+                echo 'Checking out ParaBank Test Framework...'
+                checkout scm
+            }
+        }
+        
+        stage('Setup Environment') {
+            steps {
+                echo 'Setting up Node.js environment...'
+                sh '''
+                    # Install Node.js if not available
+                    if ! command -v node &> /dev/null; then
+                        curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+                        sudo apt-get install -y nodejs
+                    fi
+                    
+                    # Verify versions
+                    node --version
+                    npm --version
+                '''
+            }
+        }
+        
+        stage('Install Dependencies') {
+            steps {
+                echo 'Installing project dependencies...'
+                sh '''
+                    npm ci
+                    npx playwright install --with-deps
+                '''
+            }
+        }
+        
+        stage('Run Tests') {
+            parallel {
+                stage('UI Tests') {
+                    when {
+                        anyOf {
+                            params.TEST_SUITE == 'all'
+                            params.TEST_SUITE == 'ui'
+                        }
+                    }
+                    steps {
+                        echo "Running UI tests on ${params.BROWSER}..."
+                        sh """
+                            export HEADLESS=${env.HEADLESS}
+                            npx playwright test tests/ui/ --project=${params.BROWSER} --reporter=junit
+                        """
+                    }
+                    post {
+                        always {
+                            publishTestResults(
+                                testResultsPattern: 'test-results/junit-results.xml',
+                                testRunTitle: 'UI Tests'
+                            )
+                        }
+                    }
+                }
+                
+                stage('API Tests') {
+                    when {
+                        anyOf {
+                            params.TEST_SUITE == 'all'
+                            params.TEST_SUITE == 'api'
+                        }
+                    }
+                    steps {
+                        echo 'Running API tests...'
+                        sh '''
+                            export HEADLESS=true
+                            npx playwright test tests/api/ --reporter=junit
+                        '''
+                    }
+                    post {
+                        always {
+                            publishTestResults(
+                                testResultsPattern: 'test-results/junit-results.xml',
+                                testRunTitle: 'API Tests'
+                            )
+                        }
+                    }
+                }
+            }
+        }
+        
+        stage('Generate Reports') {
+            steps {
+                echo 'Generating test reports...'
+                sh '''
+                    # Generate HTML report
+                    npx playwright show-report --reporter=html
+                    
+                    # Archive test artifacts
+                    if [ -d "test-results" ]; then
+                        echo "Test results directory exists"
+                        ls -la test-results/
+                    fi
+                '''
+            }
+        }
+    }
+    
+    post {
+        always {
+            echo 'Archiving test artifacts...'
+            
+            // Archive test results and reports
+            archiveArtifacts(
+                artifacts: 'test-results/**/*',
+                allowEmptyArchive: true,
+                fingerprint: true
+            )
+            
+            // Archive HTML reports
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'playwright-report',
+                reportFiles: 'index.html',
+                reportName: 'Playwright Test Report'
+            ])
+            
+            // Archive screenshots and videos on failure
+            archiveArtifacts(
+                artifacts: 'test-results/**/*.png, test-results/**/*.webm',
+                allowEmptyArchive: true
+            )
+        }
+        
+        success {
+            echo '✅ All tests passed successfully!'
+            // Notification can be added here
+        }
+        
+        failure {
+            echo '❌ Tests failed! Check the reports for details.'
+            // Notification can be added here
+        }
+        
+        unstable {
+            echo '⚠️ Tests completed with some failures.'
+        }
+        
+        cleanup {
+            echo 'Cleaning up workspace...'
+            cleanWs()
+        }
+    }
+}

@@ -1,0 +1,1024 @@
+{
+  "config": {
+    "configFile": "/Users/sakshi/Documents/Nitin/github/playwright_automation/parabank-tests/playwright.config.js",
+    "rootDir": "/Users/sakshi/Documents/Nitin/github/playwright_automation/parabank-tests/tests",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/junit-results.xml"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/json-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/sakshi/Documents/Nitin/github/playwright_automation/parabank-tests/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/sakshi/Documents/Nitin/github/playwright_automation/parabank-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 180000
+      },
+      {
+        "outputDir": "/Users/sakshi/Documents/Nitin/github/playwright_automation/parabank-tests/test-results",
+        "repeatEach": 1,
+        "retries": 2,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/sakshi/Documents/Nitin/github/playwright_automation/parabank-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 180000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "api/transactions.spec.js",
+      "file": "api/transactions.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "ParaBank API - Enhanced JSON Validation",
+          "file": "api/transactions.spec.js",
+          "line": 15,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Detailed JSON response validation after bill payment",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 300000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 57863,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "\n🚀 ===== TEST SETUP =====\n"
+                        },
+                        {
+                          "text": "🔄 Registering user: ue84b2a439e20941260\n"
+                        },
+                        {
+                          "text": "\n=== Registration Attempt 1/10 ===\n"
+                        },
+                        {
+                          "text": "Username: ue84b2a439e20941260\n"
+                        },
+                        {
+                          "text": "Navigating to registration page...\n"
+                        },
+                        {
+                          "text": "Navigating to: https://parabank.parasoft.com/parabank/register.htm\n"
+                        },
+                        {
+                          "text": "Filling registration form with bulletproof handling...\n"
+                        },
+                        {
+                          "text": "Filling firstName with selector: input[name=\"customer.firstName\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled firstName: Abe\n"
+                        },
+                        {
+                          "text": "Filling lastName with selector: input[name=\"customer.lastName\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled lastName: Hagenes\n"
+                        },
+                        {
+                          "text": "Filling address with selector: input[name=\"customer.address.street\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled address: 4875 Jabari Plains\n"
+                        },
+                        {
+                          "text": "Filling city with selector: input[name=\"customer.address.city\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled city: Lake Joe\n"
+                        },
+                        {
+                          "text": "Filling state with selector: input[name=\"customer.address.state\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled state: MN\n"
+                        },
+                        {
+                          "text": "Filling zipCode with selector: input[name=\"customer.address.zipCode\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled zipCode: 27959\n"
+                        },
+                        {
+                          "text": "Filling phoneNumber with selector: input[name=\"customer.phoneNumber\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled phoneNumber: 813-345-4774\n"
+                        },
+                        {
+                          "text": "Filling ssn with selector: input[name=\"customer.ssn\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled ssn: 370-12-6440\n"
+                        },
+                        {
+                          "text": "Filling username with selector: input[name=\"customer.username\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled username: ue84b2a439e20941260\n"
+                        },
+                        {
+                          "text": "Filling password with selector: input[name=\"customer.password\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled password: TestPass123!\n"
+                        },
+                        {
+                          "text": "Filling confirmPassword with selector: input[name=\"repeatedPassword\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled confirmPassword: TestPass123!\n"
+                        },
+                        {
+                          "text": "✓ All registration fields filled successfully\n"
+                        },
+                        {
+                          "text": "Submitting registration form...\n"
+                        },
+                        {
+                          "text": "Registration submitted using: input[value=\"Register\"]\n"
+                        },
+                        {
+                          "text": "Found success indicator: Welcome ue84b2a439e20941260\n"
+                        },
+                        {
+                          "text": "✅ Registration successful for: ue84b2a439e20941260\n"
+                        },
+                        {
+                          "text": "User already logged in - detected via: h2:has-text(\"Account Services\")\n"
+                        },
+                        {
+                          "text": "✓ Login success verified with: h2:has-text(\"Account Services\")\n"
+                        },
+                        {
+                          "text": "Navigating to accounts overview...\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "Getting account numbers from overview...\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "Found 2 account rows using: #accountTable tbody tr\n"
+                        },
+                        {
+                          "text": "Found account numbers: 27885\n"
+                        },
+                        {
+                          "text": "\n📋 TEST PARAMETERS:\n"
+                        },
+                        {
+                          "text": "  👤 Username: ue84b2a439e20941260\n"
+                        },
+                        {
+                          "text": "  🏦 Account: 27885\n"
+                        },
+                        {
+                          "text": "  💰 Payment Amount: $67.39\n"
+                        },
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "\n💳 PERFORMING BILL PAYMENT\n"
+                        },
+                        {
+                          "text": "  📋 Payee: Davis, Stamm and Dooley Services\n"
+                        },
+                        {
+                          "text": "  💰 Amount: $67.39\n"
+                        },
+                        {
+                          "text": "  🏦 From Account: 27885\n"
+                        },
+                        {
+                          "text": "🔍 Setting up network request capture...\n"
+                        },
+                        {
+                          "text": "Navigating to: https://parabank.parasoft.com/parabank/billpay.htm\n"
+                        },
+                        {
+                          "text": "📡 Captured request: GET https://parabank.parasoft.com/parabank/billpay.htm\n"
+                        },
+                        {
+                          "text": "📡 Captured API call: GET https://parabank.parasoft.com/parabank/billpay.htm\n"
+                        },
+                        {
+                          "text": "💳 Submitting payment and monitoring network calls...\n"
+                        },
+                        {
+                          "text": "📡 Captured request: POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "📡 Captured API call: POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "📊 Captured response: 200 https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "📄 Response data type: object\n"
+                        },
+                        {
+                          "text": "📡 Captured API call: GET https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "📄 Response data captured: object \n"
+                        },
+                        {
+                          "text": "📡 Total captured requests: 2\n"
+                        },
+                        {
+                          "text": "  📋 GET https://parabank.parasoft.com/parabank/billpay.htm\n"
+                        },
+                        {
+                          "text": "  📋 POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "\n✅ BILL PAYMENT COMPLETED\n"
+                        },
+                        {
+                          "text": "📡 Network calls captured: 2\n"
+                        },
+                        {
+                          "text": "\n📊 ===== JSON RESPONSE ANALYSIS =====\n"
+                        },
+                        {
+                          "text": "📡 Returning 3 captured endpoints\n"
+                        },
+                        {
+                          "text": "\n📡 CAPTURED ENDPOINTS: 3\n"
+                        },
+                        {
+                          "text": "  1. GET https://parabank.parasoft.com/parabank/billpay.htm\n"
+                        },
+                        {
+                          "text": "  2. POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "  3. GET https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "\n🔍 SEARCHING FOR TRANSACTION DATA\n"
+                        },
+                        {
+                          "text": "\n🔍 SEARCHING FOR TRANSACTIONS\n"
+                        },
+                        {
+                          "text": "📋 Account: 27885\n"
+                        },
+                        {
+                          "text": "💰 Amount: $67.39\n"
+                        },
+                        {
+                          "text": "\n📡 FOUND 2 CAPTURED ENDPOINTS\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING CAPTURED ENDPOINT: POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 400\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING CAPTURED ENDPOINT: GET https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 405\n"
+                        },
+                        {
+                          "text": "\n🔄 TRYING FALLBACK ENDPOINTS\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING FALLBACK: /services/bank/accounts/27885/transactions\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING FALLBACK: /services/bank/transactions/account/27885\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING FALLBACK: /activity.htm?id=27885\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING FALLBACK: /overview.htm\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING FALLBACK: /findtrans.htm\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "\n❌ NO SUCCESSFUL API RESPONSES FOUND\n"
+                        },
+                        {
+                          "text": "\n📊 API RESPONSE SUMMARY:\n"
+                        },
+                        {
+                          "text": "  🌐 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "  📡 Endpoint Used: none\n"
+                        },
+                        {
+                          "text": "  📄 Data Type: null\n"
+                        },
+                        {
+                          "text": "\n⚠️ NO JSON DATA AVAILABLE FOR VALIDATION\n"
+                        },
+                        {
+                          "text": "  📊 Status: 404\n"
+                        },
+                        {
+                          "text": "  📄 Data: null\n"
+                        },
+                        {
+                          "text": "  ℹ️ This may indicate ParaBank uses form submissions rather than JSON APIs\n"
+                        },
+                        {
+                          "text": "\n🔍 ===== ADDITIONAL API TESTING =====\n"
+                        },
+                        {
+                          "text": "\n🏦 TESTING ACCOUNT DETAILS API\n"
+                        },
+                        {
+                          "text": "\n🔍 GETTING ACCOUNT DETAILS: 27885\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING: /services/bank/accounts/27885\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING: /activity.htm?id=27885\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "\n🔍 TRYING: /overview.htm\n"
+                        },
+                        {
+                          "text": "📊 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "\n📊 ACCOUNT DETAILS RESPONSE:\n"
+                        },
+                        {
+                          "text": "  🌐 HTTP Status: 404\n"
+                        },
+                        {
+                          "text": "  📡 Endpoint: none\n"
+                        },
+                        {
+                          "text": "  ℹ️ Account details API not available or returned non-JSON data\n"
+                        },
+                        {
+                          "text": "📄 Returning 1 JSON responses\n"
+                        },
+                        {
+                          "text": "\n📄 ALL CAPTURED JSON RESPONSES: 1\n"
+                        },
+                        {
+                          "text": "\n  📄 Response 1:\n"
+                        },
+                        {
+                          "text": "    🌐 Endpoint: GET https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "    📊 Data Type: object\n"
+                        },
+                        {
+                          "text": "    📋 Object Fields: payeeName, amount, accountId\n"
+                        },
+                        {
+                          "text": "    📄 Full Response:\n"
+                        },
+                        {
+                          "text": "{\n  \"payeeName\": \"Davis, Stamm and Dooley Services\",\n  \"amount\": 67.39,\n  \"accountId\": 27885\n}\n"
+                        },
+                        {
+                          "text": "\n🎯 ===== FINAL VALIDATION SUMMARY =====\n"
+                        },
+                        {
+                          "text": "\n📊 TEST EXECUTION SUMMARY:\n"
+                        },
+                        {
+                          "text": "  👤 User: ue84b2a439e20941260\n"
+                        },
+                        {
+                          "text": "  🏦 Account: 27885\n"
+                        },
+                        {
+                          "text": "  💰 Transaction Amount: 67.39\n"
+                        },
+                        {
+                          "text": "  📡 Network Calls Captured: 2\n"
+                        },
+                        {
+                          "text": "📡 Returning 3 captured endpoints\n"
+                        },
+                        {
+                          "text": "📄 Returning 1 JSON responses\n"
+                        },
+                        {
+                          "text": "  📡 API Endpoints Found: 3\n"
+                        },
+                        {
+                          "text": "  📄 JSON Responses: 1\n"
+                        },
+                        {
+                          "text": "\n✅ VALIDATIONS PERFORMED:\n"
+                        },
+                        {
+                          "text": "  🔍 Network request capture during bill payment\n"
+                        },
+                        {
+                          "text": "  📡 API endpoint discovery and testing\n"
+                        },
+                        {
+                          "text": "  📄 JSON response structure analysis\n"
+                        },
+                        {
+                          "text": "  🏦 Account and transaction data validation\n"
+                        },
+                        {
+                          "text": "  💰 Amount and ID matching verification\n"
+                        },
+                        {
+                          "text": "  📊 Data type and field presence validation\n"
+                        },
+                        {
+                          "text": "\n📈 JSON RESPONSE ANALYSIS RESULTS:\n"
+                        },
+                        {
+                          "text": "\n  📄 Response 1 Summary:\n"
+                        },
+                        {
+                          "text": "    📡 Endpoint: https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=27885&amount=67.39\n"
+                        },
+                        {
+                          "text": "    📊 Type: object\n"
+                        },
+                        {
+                          "text": "\n🎉 JSON VALIDATION TEST COMPLETED SUCCESSFULLY!\n"
+                        },
+                        {
+                          "text": "📋 Comprehensive JSON response analysis performed\n"
+                        },
+                        {
+                          "text": "🔍 All available API endpoints tested and validated\n"
+                        },
+                        {
+                          "text": "\n🏁 ===== TEST EXECUTION COMPLETE =====\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Setup user and perform bill payment",
+                          "duration": 54586
+                        },
+                        {
+                          "title": "JSON Response Analysis and Validation",
+                          "duration": 2128
+                        },
+                        {
+                          "title": "Additional API Endpoint Testing",
+                          "duration": 879
+                        },
+                        {
+                          "title": "Final Validation Summary",
+                          "duration": 4
+                        }
+                      ],
+                      "startTime": "2025-07-27T17:05:41.253Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f9746ad54785e2b891c6-0bf9e7d816399a13e8a7",
+              "file": "api/transactions.spec.js",
+              "line": 39,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "ui/banking-workflow.spec.js",
+      "file": "ui/banking-workflow.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "ParaBank Banking Workflow - Final Fixed",
+          "file": "ui/banking-workflow.spec.js",
+          "line": 17,
+          "column": 6,
+          "specs": [
+            {
+              "title": "Complete banking workflow - Register, Login, Account Operations, Bill Pay",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 72565,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "Generated test data for user: uc430830336ff999345\n"
+                        },
+                        {
+                          "text": "\n🚀 Starting test with user: uc430830336ff999345\n"
+                        },
+                        {
+                          "text": "\n=== STEP 1: User Registration ===\n"
+                        },
+                        {
+                          "text": "\n=== Registration Attempt 1/10 ===\n"
+                        },
+                        {
+                          "text": "Username: uc430830336ff999345\n"
+                        },
+                        {
+                          "text": "Navigating to registration page...\n"
+                        },
+                        {
+                          "text": "Navigating to: https://parabank.parasoft.com/parabank/register.htm\n"
+                        },
+                        {
+                          "text": "Filling registration form with bulletproof handling...\n"
+                        },
+                        {
+                          "text": "Filling firstName with selector: input[name=\"customer.firstName\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled firstName: Granville\n"
+                        },
+                        {
+                          "text": "Filling lastName with selector: input[name=\"customer.lastName\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled lastName: White\n"
+                        },
+                        {
+                          "text": "Filling address with selector: input[name=\"customer.address.street\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled address: 594 Mina Light\n"
+                        },
+                        {
+                          "text": "Filling city with selector: input[name=\"customer.address.city\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled city: Funkland\n"
+                        },
+                        {
+                          "text": "Filling state with selector: input[name=\"customer.address.state\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled state: NY\n"
+                        },
+                        {
+                          "text": "Filling zipCode with selector: input[name=\"customer.address.zipCode\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled zipCode: 98122\n"
+                        },
+                        {
+                          "text": "Filling phoneNumber with selector: input[name=\"customer.phoneNumber\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled phoneNumber: 805-073-7083\n"
+                        },
+                        {
+                          "text": "Filling ssn with selector: input[name=\"customer.ssn\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled ssn: 263-75-3763\n"
+                        },
+                        {
+                          "text": "Filling username with selector: input[name=\"customer.username\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled username: uc430830336ff999345\n"
+                        },
+                        {
+                          "text": "Filling password with selector: input[name=\"customer.password\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled password: TestPass123!\n"
+                        },
+                        {
+                          "text": "Filling confirmPassword with selector: input[name=\"repeatedPassword\"]\n"
+                        },
+                        {
+                          "text": "✓ Successfully filled confirmPassword: TestPass123!\n"
+                        },
+                        {
+                          "text": "✓ All registration fields filled successfully\n"
+                        },
+                        {
+                          "text": "Submitting registration form...\n"
+                        },
+                        {
+                          "text": "Registration submitted using: input[value=\"Register\"]\n"
+                        },
+                        {
+                          "text": "Found success indicator: Welcome uc430830336ff999345\n"
+                        },
+                        {
+                          "text": "✅ Registration successful for: uc430830336ff999345\n"
+                        },
+                        {
+                          "text": "Found success indicator: Welcome uc430830336ff999345\n"
+                        },
+                        {
+                          "text": "✅ User uc430830336ff999345 registered successfully\n"
+                        },
+                        {
+                          "text": "\n=== STEP 2: Login Verification ===\n"
+                        },
+                        {
+                          "text": "User already logged in - detected via: h2:has-text(\"Account Services\")\n"
+                        },
+                        {
+                          "text": "✅ User is already logged in after registration\n"
+                        },
+                        {
+                          "text": "✓ Login success verified with: h2:has-text(\"Account Services\")\n"
+                        },
+                        {
+                          "text": "✅ User uc430830336ff999345 login state verified\n"
+                        },
+                        {
+                          "text": "\n=== STEP 3: Navigation Verification ===\n"
+                        },
+                        {
+                          "text": "✅ Navigation element found: a[href*=\"services.htm\"]\n"
+                        },
+                        {
+                          "text": "✅ Global navigation menu verified\n"
+                        },
+                        {
+                          "text": "\n=== STEP 4: Account Creation ===\n"
+                        },
+                        {
+                          "text": "Navigating to accounts overview...\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "Getting account numbers from overview...\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "Found 2 account rows using: #accountTable tbody tr\n"
+                        },
+                        {
+                          "text": "Found account numbers: 28440\n"
+                        },
+                        {
+                          "text": "📋 Existing accounts: 28440\n"
+                        },
+                        {
+                          "text": "Navigating to: https://parabank.parasoft.com/parabank/openaccount.htm\n"
+                        },
+                        {
+                          "text": "✅ New Savings account created: 28662\n"
+                        },
+                        {
+                          "text": "\n=== STEP 5: Balance Verification ===\n"
+                        },
+                        {
+                          "text": "Navigating to accounts overview...\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "Getting balance for account: 28662\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "Balance for 28662: $100.00\n"
+                        },
+                        {
+                          "text": "Getting balance for account: 28662\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "Balance for 28662: $100.00\n"
+                        },
+                        {
+                          "text": "Account 28662 balance value: 100\n"
+                        },
+                        {
+                          "text": "✅ Account 28662 shows balance: $100.00\n"
+                        },
+                        {
+                          "text": "\n=== STEP 6: Fund Transfer ===\n"
+                        },
+                        {
+                          "text": "Getting account numbers from overview...\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "Found 3 account rows using: #accountTable tbody tr\n"
+                        },
+                        {
+                          "text": "Found account numbers: 28440, 28662\n"
+                        },
+                        {
+                          "text": "Navigating to: https://parabank.parasoft.com/parabank/transfer.htm\n"
+                        },
+                        {
+                          "text": "✅ Transferred $50.00 from 28662 to 28440\n"
+                        },
+                        {
+                          "text": "\n=== STEP 7: Bill Payment ===\n"
+                        },
+                        {
+                          "text": "Deprecation Warning: faker.random.number is now located in faker.datatype.number\n"
+                        },
+                        {
+                          "text": "🔍 Setting up network request capture...\n"
+                        },
+                        {
+                          "text": "Navigating to: https://parabank.parasoft.com/parabank/billpay.htm\n"
+                        },
+                        {
+                          "text": "📡 Captured request: GET https://parabank.parasoft.com/parabank/billpay.htm\n"
+                        },
+                        {
+                          "text": "💳 Submitting payment and monitoring network calls...\n"
+                        },
+                        {
+                          "text": "📡 Captured request: POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=28662&amount=60.35\n"
+                        },
+                        {
+                          "text": "📊 Captured response: 200 https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=28662&amount=60.35\n"
+                        },
+                        {
+                          "text": "📄 Response data type: object\n"
+                        },
+                        {
+                          "text": "📡 Total captured requests: 2\n"
+                        },
+                        {
+                          "text": "  📋 GET https://parabank.parasoft.com/parabank/billpay.htm\n"
+                        },
+                        {
+                          "text": "  📋 POST https://parabank.parasoft.com/parabank/services_proxy/bank/billpay?accountId=28662&amount=60.35\n"
+                        },
+                        {
+                          "text": "✅ Bill payment of $60.35 completed to Casper, Murphy and Ebert Services\n"
+                        },
+                        {
+                          "text": "\n=== STEP 8: Final Verification ===\n"
+                        },
+                        {
+                          "text": "Navigating to accounts overview...\n"
+                        },
+                        {
+                          "text": "📡 Captured request: GET https://parabank.parasoft.com/parabank/services_proxy/bank/customers/22091/accounts\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "📊 Captured response: 200 https://parabank.parasoft.com/parabank/services_proxy/bank/customers/22091/accounts\n"
+                        },
+                        {
+                          "text": "📄 Response data type: Array\n"
+                        },
+                        {
+                          "text": "Getting balance for account: 28662\n"
+                        },
+                        {
+                          "text": "Accounts table found with selector: #accountTable\n"
+                        },
+                        {
+                          "text": "Balance for 28662: -$10.35\n"
+                        },
+                        {
+                          "text": "✅ Final verification complete. Account balance: -$10.35\n"
+                        },
+                        {
+                          "text": "\n🎉 Complete banking workflow test passed successfully!\n"
+                        },
+                        {
+                          "text": "User already logged in - detected via: h2:has-text(\"Account Services\")\n"
+                        },
+                        {
+                          "text": "✓ User logged out successfully\n"
+                        },
+                        {
+                          "text": "✅ User logged out successfully\n"
+                        }
+                      ],
+                      "stderr": [
+                        {
+                          "text": "⚠️ Could not get total balance, but continuing\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "steps": [
+                        {
+                          "title": "Register new user",
+                          "duration": 43044
+                        },
+                        {
+                          "title": "Ensure user is logged in",
+                          "duration": 4
+                        },
+                        {
+                          "title": "Verify global navigation menu",
+                          "duration": 2
+                        },
+                        {
+                          "title": "Open new Savings account",
+                          "duration": 7394
+                        },
+                        {
+                          "title": "Validate Account Overview shows balance",
+                          "duration": 6377
+                        },
+                        {
+                          "title": "Transfer funds between accounts",
+                          "duration": 4977
+                        },
+                        {
+                          "title": "Pay bill using created account",
+                          "duration": 5156
+                        },
+                        {
+                          "title": "Final account verification",
+                          "duration": 4372
+                        }
+                      ],
+                      "startTime": "2025-07-27T17:06:39.344Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "b731fc77ad9450405cf2-557fcaca4528feaaddb0",
+              "file": "ui/banking-workflow.spec.js",
+              "line": 29,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-07-27T17:05:40.625Z",
+    "duration": 131322.47,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}
